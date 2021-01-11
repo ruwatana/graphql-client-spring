@@ -1,0 +1,7 @@
+query KantoPokemons {
+  pokemons(first: 151) {
+    number,
+    name,
+    types
+  }
+}

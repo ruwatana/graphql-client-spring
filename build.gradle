@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.4.1'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
+	id 'com.apollographql.apollo' version '2.5.2'
 }
 
 group = 'com.example'
@@ -13,7 +14,10 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.apollographql.apollo:apollo-runtime:2.5.2'
+	// 同期通信を簡単に書くために RxJava で書けるライブラリも import しています
+	implementation 'com.apollographql.apollo:apollo-rx3-support:2.5.2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
